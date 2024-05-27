@@ -20,6 +20,10 @@
 
 如果在使用此程序时遇到任何问题，请在此存储库上 [提出问题](https://github.com/okisooo/wutheringwaves-fps-unlock/issues)。
 
+# 寻找合作者！
+
+我们正在积极寻找合作者来帮助改进这个项目。如果你有兴趣，请 [提出问题](https://github.com/okisooo/wutheringwaves-fps-unlock/issues) 或提交一个拉取请求。
+
 ## 许可
 
 此项目根据 MIT 许可证的条款进行许可。详情请参阅 [许可证](LICENSE) 文件。

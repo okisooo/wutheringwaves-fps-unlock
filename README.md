@@ -20,6 +20,10 @@ Unlock your framerate in Wuthering Waves!
 
 If you encounter any issues while using this program, please [open an issue](https://github.com/okisooo/wutheringwaves-fps-unlock/issues) on this repository.
 
+# Looking for Collaborators!
+
+We're actively looking for collaborators to help improve this project. If you're interested, please [open an issue](https://github.com/okisooo/wutheringwaves-fps-unlock/issues) or submit a pull request.
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
