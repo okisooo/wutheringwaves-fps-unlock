@@ -1,5 +1,6 @@
 # Wuthering Waves FPS 解锁
 [English](README.md)
+
 在 Wuthering Waves 中解锁你的帧率！
 
 ## 安装
