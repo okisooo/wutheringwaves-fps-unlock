@@ -38,7 +38,7 @@ def change_framerate_limit(db_path, new_framerate):
         return False
 
 def select_file_path(entry):
-    file_path = filedialog.askopenfilename(initialdir="D:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage", filetypes=[('Database Files', '*.db')])
+    file_path = filedialog.askopenfilename(initialdir="C:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage", filetypes=[('Database Files', '*.db')])
     entry.delete(0, tk.END)
     entry.insert(0, file_path)
 
@@ -46,7 +46,7 @@ def apply_changes(entry, scale):
     file_path = entry.get()
     fps = scale.get()
     if fps > 120:
-        messagebox.showwarning("Warning", "Setting FPS above 120 is usually not necessary! Use with caution.")
+        messagebox.showwarning("Warning", "Wuthering Waves is currently not optimized for 120+ FPS. Proceed at your own risk.")
     if change_framerate_limit(file_path, fps):
         messagebox.showinfo("Success", "Changes applied successfully!")
 
@@ -60,7 +60,7 @@ def create_window():
     file_path_entry = ttk.Entry(window, width=50)
     file_path_entry.grid(row=0, column=1, padx=10, pady=10)
 
-    file_path_entry.insert(0, "D:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage/LocalStorage.db")
+    file_path_entry.insert(0, "C:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage/LocalStorage.db")
 
     select_button = ttk.Button(window, text="Select File", command=lambda: select_file_path(file_path_entry))
     select_button.grid(row=0, column=2, padx=10, pady=10)
