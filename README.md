@@ -1,5 +1,6 @@
 # Wuthering Waves FPS Unlock
 [中文](README.zh.md)
+
 Unlock your framerate in Wuthering Waves!
 
 ## Installation
