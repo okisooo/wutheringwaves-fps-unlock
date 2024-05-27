@@ -10,7 +10,7 @@ Unlock your framerate in Wuthering Waves!
 
 ## Usage
 
-1. Run the `WutheringWavesFPSUnlock.exe` file.
+1. Run the `WW_Unlocker.exe` file.
 2. The program will automatically detect the `LocalStorage.db` file if it's in the default location. If your `LocalStorage.db` file is in a different location, click the "Select File" button and navigate to the file.
 3. Use the slider to select your desired FPS limit.
 4. Click the "Apply" button to apply the changes.
