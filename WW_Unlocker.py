@@ -1,7 +1,8 @@
 import json
 import sqlite3
 import tkinter as tk
-from tkinter import filedialog, messagebox, simpledialog
+from tkinter import ttk, filedialog, messagebox, simpledialog
+from ttkthemes import ThemedTk
 
 def change_framerate_limit(db_path, new_framerate):
     try:
@@ -37,7 +38,7 @@ def change_framerate_limit(db_path, new_framerate):
         return False
 
 def select_file_path(entry):
-    file_path = filedialog.askopenfilename(initialdir="C:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage")
+    file_path = filedialog.askopenfilename(initialdir="D:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage", filetypes=[('Database Files', '*.db')])
     entry.delete(0, tk.END)
     entry.insert(0, file_path)
 
@@ -50,22 +51,25 @@ def apply_changes(entry, scale):
         messagebox.showinfo("Success", "Changes applied successfully!")
 
 def create_window():
-    window = tk.Tk()
+    window = ThemedTk(theme="arc")  # Use the "arc" theme
     window.title("FPS Changer Tool")
     window.geometry('650x200')
+    window.iconbitmap('icon.ico')  # Add this line
 
-    tk.Label(window, text="Database File Path:").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-    file_path_entry = tk.Entry(window, width=50)
+    ttk.Label(window, text="Database File Path:").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+    file_path_entry = ttk.Entry(window, width=50)
     file_path_entry.grid(row=0, column=1, padx=10, pady=10)
 
-    select_button = tk.Button(window, text="Select File", command=lambda: select_file_path(file_path_entry))
+    file_path_entry.insert(0, "D:/Wuthering Waves/Wuthering Waves Game/Client/Saved/LocalStorage/LocalStorage.db")
+
+    select_button = ttk.Button(window, text="Select File", command=lambda: select_file_path(file_path_entry))
     select_button.grid(row=0, column=2, padx=10, pady=10)
 
-    tk.Label(window, text="FPS:").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-    fps_scale = tk.Scale(window, from_=1, to=240, orient=tk.HORIZONTAL, length=400, label="FPS")
+    ttk.Label(window, text="FPS:").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+    fps_scale = ttk.Scale(window, from_=1, to=240, orient=tk.HORIZONTAL, length=400)
     fps_scale.grid(row=1, column=1, padx=10, pady=10)
 
-    apply_button = tk.Button(window, text="Apply", command=lambda: apply_changes(file_path_entry, fps_scale))
+    apply_button = ttk.Button(window, text="Apply", command=lambda: apply_changes(file_path_entry, fps_scale))
     apply_button.grid(row=2, column=1, padx=10, pady=10)
 
     window.mainloop()
