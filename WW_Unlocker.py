@@ -66,8 +66,12 @@ def create_window():
     select_button.grid(row=0, column=2, padx=10, pady=10)
 
     ttk.Label(window, text="FPS:").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-    fps_scale = ttk.Scale(window, from_=1, to=240, orient=tk.HORIZONTAL, length=400)
+    fps_value = tk.StringVar()
+    fps_scale = ttk.Scale(window, from_=1, to=240, orient=tk.HORIZONTAL, length=400, command=lambda s: fps_value.set('%d' % float(s)))
     fps_scale.grid(row=1, column=1, padx=10, pady=10)
+
+    fps_label = ttk.Label(window, textvariable=fps_value)
+    fps_label.grid(row=1, column=2, padx=10, pady=10)
 
     apply_button = ttk.Button(window, text="Apply", command=lambda: apply_changes(file_path_entry, fps_scale))
     apply_button.grid(row=2, column=1, padx=10, pady=10)
